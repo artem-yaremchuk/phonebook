@@ -1,0 +1,100 @@
+.contactsListItem {
+    width: 260px;
+    background-color: #ffffff;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.contactsListItem:hover,
+.contactsListItem:focus {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contactsCoverDiv {
+    position: relative;
+    overflow: hidden;
+}
+
+.contactAvatar {
+    width: 100%;
+}
+
+.contactsCoverInfo {
+    position: absolute;
+    top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #333333;
+    padding: 30px 22px;
+    background-color: #F2F2F2;
+    opacity: 0.9;
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform var(--transition);
+}
+
+.contactsCoverTitle {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    margin-bottom: 8px;
+}
+
+.contactsCoverText {
+    margin-bottom: 5px;
+}
+
+.contactsListItem:hover .contactsCoverInfo,
+.contactsListItem:focus .contactsCoverInfo {
+    transform: translateY(0%);
+}
+
+.contactsWrap {
+    padding: 28px 16px;
+    border: 1px solid #e7e9fc;
+    border-top: none;
+}
+
+.contactName {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--title-color);
+    margin-bottom: 8px;
+}
+
+.contactPhone {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.deleteBtn {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #000000;
+    background-color: var(--body-background-color);
+    padding: 3px 14px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    transition: color var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.deleteBtn:hover {
+    color: #FFFFFF;
+    background-color: #000000;
+    border: 1px solid transparent;
+    box-shadow: 0px 3px 1px rgba(255, 255, 255, 0.1), 0px 2px 1px rgba(255, 255, 255, 0.08), 0px 2px 2px rgba(255, 255, 255, 0.12);
+}
