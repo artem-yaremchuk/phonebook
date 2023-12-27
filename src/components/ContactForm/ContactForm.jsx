@@ -13,7 +13,7 @@ const ContactForm = () => {
 
   const [data, setData] = useState({
     name: "",
-    phone: "",
+    number: "",
   });
 
   const handleChange = (evt) => {
@@ -26,7 +26,7 @@ const ContactForm = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    if (data.name.trim() === "" || data.phone.trim() === "") {
+    if (data.name.trim() === "" || data.number.trim() === "") {
       Notiflix.Notify.warning("Fill in the fields");
       return;
     }
@@ -42,7 +42,7 @@ const ContactForm = () => {
   };
 
   const reset = () => {
-    setData({ name: "", phone: "" });
+    setData({ name: "", number: "" });
   };
 
   return (
@@ -71,10 +71,10 @@ const ContactForm = () => {
         <div className={css.inputWrap}>
           <input
             type="tel"
-            name="phone"
+            name="number"
             className={css.formInput}
             id="exampleInputNumber"
-            value={data.phone}
+            value={data.number}
             onChange={handleChange}
             required
           />
@@ -84,7 +84,7 @@ const ContactForm = () => {
       <button type="submit" className={css.formBtn}>
         Add contact
       </button>
-      </form>
+    </form>
   );
 };
 

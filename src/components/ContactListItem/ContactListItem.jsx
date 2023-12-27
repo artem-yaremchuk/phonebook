@@ -22,7 +22,7 @@ const ContactListItem = ({ contact }) => {
       </div>
       <div className={css.contactsWrap}>
         <h3 className={css.contactName}>{contact.name}</h3>
-        <p className={css.contactPhone}>{contact.phone}</p>
+        <p className={css.contactPhone}>{contact.number}</p>
         <button
           type="button"
           className={css.deleteBtn}
