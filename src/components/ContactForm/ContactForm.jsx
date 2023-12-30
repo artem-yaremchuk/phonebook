@@ -53,7 +53,7 @@ const ContactForm = () => {
           }}
           onCancel={() => {
             toast.dismiss(t.id);
-            toast.error("Contact not updated");
+            toast.error(`${data.name} phone number is not updated`);
           }}
         />
       ));
