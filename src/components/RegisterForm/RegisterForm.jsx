@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
+import { Link } from "react-router-dom";
 import css from "./RegisterForm.module.css";
 
 export const RegisterForm = () => {
@@ -8,6 +9,7 @@ export const RegisterForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
+    console.log(form.elements);
     dispatch(
       register({
         name: form.elements.name.value,
@@ -20,19 +22,29 @@ export const RegisterForm = () => {
 
   return (
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
-        Username
-        <input type="text" name="name" />
+      <p className={css.title}>Register </p>
+      <p className={css.message}>Signup now and get full access to our app. </p>
+      <label>
+        <input className={css.input} type="text" name="name" placeholder="" required />
+        <span>Username</span>
       </label>
-      <label className={css.label}>
-        Email
-        <input type="email" name="email" />
+      <label>
+        <input className={css.input} type="email" name="email" placeholder="" required />
+        <span>Email</span>
       </label>
-      <label className={css.label}>
-        Password
-        <input type="password" name="password" />
+      <label>
+        <input className={css.input} type="password" name="password" placeholder="" required />
+        <span>Password</span>
       </label>
-      <button type="submit">Register</button>
+      <button type="submit" className={css.submitBtn}>
+        Submit
+      </button>
+      <p className={css.signin}>
+        Already have an acount ?
+        <Link className={css.link} to="/login">
+          Sign In
+        </Link>
+      </p>
     </form>
   );
 };

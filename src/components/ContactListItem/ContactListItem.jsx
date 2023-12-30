@@ -1,36 +1,21 @@
 import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contacts/operations";
 import css from "./ContactListItem.module.css";
+import { ReactComponent as Avatar } from "../../images/user-avatar.svg";
 
 const ContactListItem = ({ contact }) => {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(contact.id));
   return (
     <li className={css.contactsListItem}>
-      <div className={css.contactsCoverDiv}>
-        <img
-          className={css.contactAvatar}
-          src={contact.avatar}
-          alt={contact.name}
-        />
-        <div className={css.contactsCoverInfo}>
-          <h4 className={css.contactsCoverTitle}>Additional info</h4>
-          <p className={css.contactsCoverText}>Country: {contact.country}</p>
-          <p className={css.contactsCoverText}>City: {contact.city}</p>
-          <p className={css.contactsCoverText}>Street: {contact.street}</p>
+      <div className={css.avatarContainer} >
+        <Avatar className={css.avatar}/>
         </div>
-      </div>
-      <div className={css.contactsWrap}>
-        <h3 className={css.contactName}>{contact.name}</h3>
-        <p className={css.contactPhone}>{contact.number}</p>
-        <button
-          type="button"
-          className={css.deleteBtn}
-          onClick={() => handleDelete()}
-        >
-          Delete
-        </button>
-      </div>
+      <h3 className={css.contactName}>{contact.name}</h3>
+      <p className={css.contactPhone}>{contact.number}</p>
+      <button type="button" className={css.deleteBtn} onClick={handleDelete}>
+        Delete
+      </button>
     </li>
   );
 };

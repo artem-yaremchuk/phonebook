@@ -4,7 +4,7 @@ import { filterReducer } from "./filter/slice";
 import { authReducer } from "./auth/slice";
 import {
   persistStore,
-  persistCombineReducers,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -20,16 +20,14 @@ const authPersistConfig = {
   whitelist: ["token"],
 };
 
-console.log(authPersistConfig);
-
-const rootReducer = persistCombineReducers(authPersistConfig, {
-  auth: authReducer,
-  contacts: contactsReducer,
-  filter: filterReducer,
-});
+const persistedReducer = persistReducer(authPersistConfig, authReducer);
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    auth: persistedReducer,
+    contacts: contactsReducer,
+    filter: filterReducer,
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

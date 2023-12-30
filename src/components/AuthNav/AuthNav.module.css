@@ -1,11 +1,17 @@
-.link {
-    display: inline-block;
-    text-decoration: none;
-    padding: 12px;
-    font-weight: 700;
-    color: #2a363b;
+.authWrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.link.active {
-    color: #e84a5f;
+.link {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    transition: color var(--transition);
+}
+
+.link:hover {
+    color: #725AC1;
 }

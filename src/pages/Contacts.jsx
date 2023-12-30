@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "../redux/contacts/operations";
-import { selectItems, selectIsLoading, selectError } from "../redux/contacts/selectors";
+import {
+  selectItems,
+  selectIsLoading,
+  selectError,
+} from "../redux/contacts/selectors";
 import ContactForm from "../components/ContactForm/ContactForm";
 import ContactList from "../components/ContactList/ContactList";
 import Filter from "../components/Filter/Filter";
 import Loader from "../components/Loader/Loader";
-import Notiflix from "notiflix";
+import toast from "react-hot-toast";
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -19,13 +23,14 @@ const Contacts = () => {
   }, [dispatch]);
 
   if (error) {
-    Notiflix.Notify.failure("Oooops, something went wrong...");
+    toast.error("Oooops, something went wrong...");
   }
 
   return (
     <div>
       <h1
         style={{
+          fontFamily: "Neue Montreal Medium",
           fontSize: 36,
           fontWeight: 600,
           lineHeight: "1.1",
@@ -42,6 +47,7 @@ const Contacts = () => {
 
       <h2
         style={{
+          fontFamily: "Neue Montreal Medium",
           fontSize: 32,
           fontWeight: 500,
           lineHeight: "1.5",

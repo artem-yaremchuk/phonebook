@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store";
 import Loader from "./components/Loader/Loader"
 import "./index.css";
+import "modern-normalize";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

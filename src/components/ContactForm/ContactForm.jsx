@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from "../../redux/contacts/operations";
+import { addContact, updateContact } from "../../redux/contacts/operations";
 import { selectItems } from "../../redux/contacts/selectors";
-import Notiflix from "notiflix";
 import css from "./ContactForm.module.css";
 import { ReactComponent as UserLogo } from "../../images/user.svg";
 import { ReactComponent as PhoneLogo } from "../../images/phone.svg";
+import toast from "react-hot-toast";
+import ConfirmDialog from "../ConfirmDialog/ConfirmDialog";
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -27,18 +28,40 @@ const ContactForm = () => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     if (data.name.trim() === "" || data.number.trim() === "") {
-      Notiflix.Notify.warning("Fill in the fields");
+      toast.error("Fill in the fields");
       return;
     }
-    const sameNames = items.some(
+
+    const existingContact = items.find(
       (contact) => contact.name.toLowerCase() === data.name.toLowerCase(),
     );
-    if (sameNames) {
-      Notiflix.Notify.info(`${data.name} is already in contacts`);
-      return;
+
+    if (existingContact) {
+      toast((t) => (
+        <ConfirmDialog
+          message={`${data.name} is already in your contacts list. Do you want to update the phone number?`}
+          onConfirm={() => {
+            dispatch(
+              updateContact({
+                id: existingContact.id,
+                number: data.number,
+              }),
+            );
+            toast.dismiss(t.id);
+            toast.success(`${data.name}'s phone number updated`);
+            reset();
+          }}
+          onCancel={() => {
+            toast.dismiss(t.id);
+            toast.error("Contact not added");
+          }}
+        />
+      ));
+    } else {
+      dispatch(addContact(data));
+      toast.success(`${data.name} added to contacts`);
+      reset();
     }
-    dispatch(addContact(data));
-    reset();
   };
 
   const reset = () => {
@@ -46,7 +69,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={css.form}>
+    <form onSubmit={handleSubmit} className={css.form} autoComplete="off">
       <div className={css.formFieldName}>
         <label htmlFor="exampleInputName" className={css.formLabel}>
           Name

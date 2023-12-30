@@ -1,10 +1,29 @@
 .contactsListItem {
-    width: 260px;
-    background-color: #ffffff;
-    overflow: hidden;
-    border-radius: 5px;
+    width: 240px;
+    padding: 20px 30px;
+    text-align: center;
+    background-color: #ffff;
+    border-radius: 10px;
+    border: 1px solid #68a9f2;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.avatarContainer {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #68a9f2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 8px;
+}
+
+.avatar {
+    width: 40px;
+    fill: currentColor;
 }
 
 .contactsListItem:hover,
@@ -13,55 +32,8 @@
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.contactsCoverDiv {
-    position: relative;
-    overflow: hidden;
-}
-
-.contactAvatar {
-    width: 100%;
-}
-
-.contactsCoverInfo {
-    position: absolute;
-    top: 0;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #333333;
-    padding: 30px 22px;
-    background-color: #F2F2F2;
-    opacity: 0.9;
-    height: 100%;
-    width: 100%;
-    transform: translateY(100%);
-    transition: transform var(--transition);
-}
-
-.contactsCoverTitle {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: 0.01em;
-    margin-bottom: 8px;
-}
-
-.contactsCoverText {
-    margin-bottom: 5px;
-}
-
-.contactsListItem:hover .contactsCoverInfo,
-.contactsListItem:focus .contactsCoverInfo {
-    transform: translateY(0%);
-}
-
-.contactsWrap {
-    padding: 28px 16px;
-    border: 1px solid #e7e9fc;
-    border-top: none;
-}
-
 .contactName {
+    font-family: "Neue Montreal Medium";
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -75,11 +47,18 @@
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--text-color);
-    margin-bottom: 15px;
+}
+
+.contactPhone:after {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 20px 0;
+    background: #000000;
 }
 
 .deleteBtn {
-    font-family: inherit;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -89,7 +68,7 @@
     padding: 3px 14px;
     border: 1px solid #000000;
     border-radius: 4px;
-    transition: color var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
+    transition: color var(--transition), background-color var(--transition), border var(--transition), box-shadow var(--transition);
 }
 
 .deleteBtn:hover {

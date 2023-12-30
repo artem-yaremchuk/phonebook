@@ -1,9 +1,135 @@
 .form {
-    width: 320px;
-}
-
-.label {
     display: flex;
     flex-direction: column;
-    margin-bottom: 16px;
+    gap: 10px;
+    max-width: 330px;
+    padding: 26px;
+    border-radius: 20px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+    margin: 20px auto;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: rgba(243, 244, 246, 1);
+    margin-bottom: 5px;
+}
+
+.title::before {
+    width: 18px;
+    height: 18px;
+}
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: rgba(243, 244, 246, 1);
+}
+
+.message {
+    margin-bottom: 5px;
+}
+
+.message,
+.signin {
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.signin {
+    text-align: center;
+}
+
+.link {
+    color: rgba(243, 244, 246, 1);
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.link:hover {
+    text-decoration: underline rgba(167, 139, 250, 1);
+}
+
+.form label {
+    position: relative;
+}
+
+.input {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+.input + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 15px;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.input:placeholder-shown+span {
+    top: 12.5px;
+}
+
+.input:focus + span,
+.input:valid + span {
+    color: rgba(167, 139, 250, 1);
+    top: 0px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.submitBtn {
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: #1a1a1a;
+    font-size: 16px;
+    background-color: rgba(167, 139, 250, 1);
+    transition: background-color var(--transition);
+}
+
+.submitBtn:hover {
+    background-color: rgba(188, 165, 250, 1);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
 }

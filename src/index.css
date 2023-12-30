@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Neue Montreal Regular";
+  src: url(./fonts/NeueMontreal-Regular.otf);
+}
+
+@font-face {
+  font-family: "Neue Montreal Medium";
+  src: url(./fonts/NeueMontreal-Medium.otf);
+}
+
 :root {
   --title-color: #2E2F42;
   --text-color: #434455;
@@ -7,7 +17,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Neue Montreal Regular";
   color: var(--text-color);
   background-color: var(--body-background-color);
 }

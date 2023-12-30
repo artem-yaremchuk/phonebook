@@ -1,11 +1,36 @@
-.link {
-    display: inline-block;
-    text-decoration: none;
-    padding: 12px;
-    font-weight: 700;
-    color: #2a363b;
+.headerList {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
-.link.active {
-    color: #e84a5f;
+.headerListItem {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+}
+
+.headerLink {
+    transition: color var(--transition);
+}
+
+.headerLink:hover {
+    color: #725AC1;
+}
+
+@media screen and (max-width: 768px) {
+    .headerList {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .headerList {
+        gap: 10px;
+    }
+
+   .headerListItem {
+        font-size: 18px;
+   }
 }
