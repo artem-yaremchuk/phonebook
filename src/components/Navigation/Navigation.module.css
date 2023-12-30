@@ -23,6 +23,10 @@
     .headerList {
         gap: 15px;
     }
+
+    .headerListItem {
+        font-size: 19px;
+    }
 }
 
 @media screen and (max-width: 375px) {

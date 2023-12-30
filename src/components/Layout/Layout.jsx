@@ -15,11 +15,6 @@ export const Layout = () => {
       <Toaster
         position="top-center"
         reverseOrder={false}
-        toastOptions={{
-          style: {
-            padding: "10px",
-          },
-        }}
       />
     </>
   );
