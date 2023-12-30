@@ -44,22 +44,21 @@ const ContactForm = () => {
             dispatch(
               updateContact({
                 id: existingContact.id,
+                name: data.name,
                 number: data.number,
               }),
             );
             toast.dismiss(t.id);
-            toast.success(`${data.name}'s phone number updated`);
             reset();
           }}
           onCancel={() => {
             toast.dismiss(t.id);
-            toast.error("Contact not added");
+            toast.error("Contact not updated");
           }}
         />
       ));
     } else {
       dispatch(addContact(data));
-      toast.success(`${data.name} added to contacts`);
       reset();
     }
   };

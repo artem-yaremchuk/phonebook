@@ -5,7 +5,7 @@ import { ReactComponent as Avatar } from "../../images/user-avatar.svg";
 
 const ContactListItem = ({ contact }) => {
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContact(contact.id));
+  const handleDelete = () => dispatch(deleteContact(contact));
   return (
     <li className={css.contactsListItem}>
       <div className={css.avatarContainer} >
