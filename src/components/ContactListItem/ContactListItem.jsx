@@ -10,7 +10,7 @@ const ContactListItem = ({ contact }) => {
     <li className={css.contactsListItem}>
       <div className={css.avatarContainer} >
         <Avatar className={css.avatar}/>
-        </div>
+      </div>
       <h3 className={css.contactName}>{contact.name}</h3>
       <p className={css.contactPhone}>{contact.number}</p>
       <button type="button" className={css.deleteBtn} onClick={handleDelete}>
