@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contacts/operations";
 import css from "./ContactListItem.module.css";
-import { ReactComponent as Avatar } from "../../images/user-avatar.svg";
+import { ReactComponent as Avatar } from "../../assets/images/user-avatar.svg";
 
 const ContactListItem = ({ contact }) => {
   const dispatch = useDispatch();

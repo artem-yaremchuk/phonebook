@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Neue Montreal Regular";
-  src: url(./fonts/NeueMontreal-Regular.otf);
+  src: url(./assets/fonts/NeueMontreal-Regular.otf);
 }
 
 @font-face {
   font-family: "Neue Montreal Medium";
-  src: url(./fonts/NeueMontreal-Medium.otf);
+  src: url(./assets/fonts/NeueMontreal-Medium.otf);
 }
 
 :root {

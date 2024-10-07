@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addContact, updateContact } from "../../redux/contacts/operations";
 import { selectItems } from "../../redux/contacts/selectors";
 import css from "./ContactForm.module.css";
-import { ReactComponent as UserLogo } from "../../images/user.svg";
-import { ReactComponent as PhoneLogo } from "../../images/phone.svg";
+import { ReactComponent as UserLogo } from "../../assets/images/user.svg";
+import { ReactComponent as PhoneLogo } from "../../assets/images/phone.svg";
 import toast from "react-hot-toast";
 import ConfirmDialog from "../ConfirmDialog/ConfirmDialog";
 
