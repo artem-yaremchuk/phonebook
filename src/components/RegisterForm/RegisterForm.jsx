@@ -9,7 +9,6 @@ export const RegisterForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
-    console.log(form.elements);
     dispatch(
       register({
         name: form.elements.name.value,
@@ -25,15 +24,33 @@ export const RegisterForm = () => {
       <p className={css.title}>Register </p>
       <p className={css.message}>Signup now and get full access to our app. </p>
       <label>
-        <input className={css.input} type="text" name="name" placeholder="" required />
+        <input
+          className={css.input}
+          type="text"
+          name="name"
+          placeholder=""
+          required
+        />
         <span>Username</span>
       </label>
       <label>
-        <input className={css.input} type="email" name="email" placeholder="" required />
+        <input
+          className={css.input}
+          type="email"
+          name="email"
+          placeholder=""
+          required
+        />
         <span>Email</span>
       </label>
       <label>
-        <input className={css.input} type="password" name="password" placeholder="" required />
+        <input
+          className={css.input}
+          type="password"
+          name="password"
+          placeholder=""
+          required
+        />
         <span>Password</span>
       </label>
       <button type="submit" className={css.submitBtn}>
